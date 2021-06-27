@@ -20,17 +20,17 @@ void loop() // run over and over
   {
     char recive = mySerial.read();
       Serial.write(Serial.read());
-//    if(recive=='\n')
-//    {
-//       if(cmd.equals("HIGH"))
-//        digitalWrite(13,HIGH);
-//       else if(cmd.equals("LOW"))
-//        digitalWrite(13,LOW);
-//       
-//       cmd="";
-//    }
-//    else
-//      cmd+=recive;
+    if(recive=='\n')
+    {
+       if(cmd.equals("HIGH"))
+        digitalWrite(13,HIGH);
+       else if(cmd.equals("LOW"))
+        digitalWrite(13,LOW);
+       
+       cmd="";
+    }
+    else
+      cmd+=recive;
   }
   if (Serial.available())
     mySerial.write(Serial.read());
